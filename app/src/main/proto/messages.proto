@@ -1,0 +1,22 @@
+syntax="proto3";
+
+package messages;
+
+option java_multiple_files = true;
+option java_package = "gprimo.grpc.messages";
+option java_outer_classname = "GetMessages";
+option objc_class_prefix = "GM";
+
+service RunTask{
+  rpc getMessages(Empty) returns(stream Message);
+}
+
+message Message{
+  string text1=1;
+  string text2=2;
+  string text3=3;
+}
+
+message Empty{
+string text=1;
+}
